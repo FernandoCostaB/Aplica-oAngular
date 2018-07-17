@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
 import { Observable, Subject } from '../../../node_modules/rxjs';
-
+import { of } from 'rxjs';
 
 
 import 'rxjs/add/operator/switchMap'
@@ -29,6 +29,9 @@ export class TopoComponent implements OnInit {
                   .debounceTime(1000)
                   .switchMap((termoDaBusca: string)=>{
                     console.log('requisição http para a api ')
+                    if(termoDaBusca.trim()===''){
+                      return of<Oferta[]>([]);
+                    }
                     return this.ofertasService.pesquisaOfertas(termoDaBusca)
                   })
   
