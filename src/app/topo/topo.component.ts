@@ -20,6 +20,7 @@ import 'rxjs/add/operator/distinctUntilChanged'
 export class TopoComponent implements OnInit {
 
   public ofertas: Observable<Oferta[]>  
+  public oferta2: Oferta[]
   private subjectPesquisa: Subject<string> = new Subject<string>()
 
 
@@ -44,7 +45,12 @@ export class TopoComponent implements OnInit {
                   })
 
     this.ofertas.subscribe(
-      (ofertas: Oferta[])=> console.log(ofertas)
+      (ofertas: Oferta[])=> {
+        console.log(ofertas)
+        this.oferta2 = ofertas
+      }
+
+       
     )
 
 
