@@ -8,6 +8,8 @@ import { of } from 'rxjs';
 import 'rxjs/add/operator/switchMap'
 import 'rxjs/add/operator/debounceTime'
 
+import 'rxjs/add/operator/distinctUntilChanged'
+
 @Component({
   selector: 'app-topo',
   templateUrl: './topo.component.html',
@@ -27,6 +29,7 @@ export class TopoComponent implements OnInit {
     //retorno Oferta[]
     this.ofertas = this.subjectPesquisa
                   .debounceTime(1000)
+                  .distinctUntilChanged()
                   .switchMap((termoDaBusca: string)=>{
                     console.log('requisição http para a api ')
                     if(termoDaBusca.trim()===''){
