@@ -16,8 +16,11 @@ import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { AondeFicaComponent } from './oferta/aonde-fica/aonde-fica.component';
 import { registerLocaleData } from "@angular/common";
 import localePt from "@angular/common/locales/pt";
+
 registerLocaleData(localePt);
 
+//pipe
+import{DescricaoReduzida} from './util/descricao-reduzida.pipe'
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ registerLocaleData(localePt);
     DiversaoComponent,
     OfertaComponent,
     ComoUsarComponent,
-    AondeFicaComponent
+    AondeFicaComponent,
+    DescricaoReduzida
   ],
   imports: [
     BrowserModule,
