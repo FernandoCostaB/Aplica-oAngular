@@ -3,13 +3,7 @@ import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
 import { Observable, Subject } from '../../../node_modules/rxjs';
 import { of } from 'rxjs';
-
-
-import 'rxjs/add/operator/switchMap'
-import 'rxjs/add/operator/debounceTime'
-import 'rxjs/add/operator/catch'
-
-import 'rxjs/add/operator/distinctUntilChanged'
+import '../util/rxjs-extensions'
 
 @Component({
   selector: 'app-topo',
