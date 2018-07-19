@@ -6,6 +6,7 @@ import { DiversaoComponent} from './diversao/diversao.component'
 import { OfertaComponent } from './oferta/oferta.component'
 import { ComoUsarComponent} from './oferta/como-usar/como-usar.component'
 import { AondeFicaComponent } from './oferta/aonde-fica/aonde-fica.component';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 
 
 
@@ -20,5 +21,6 @@ export const ROUTES: Routes = [
              {path: 'como-usar', component: ComoUsarComponent},
              {path: 'aonde-fica', component: AondeFicaComponent},
         ]
-    }
+    },
+    {path: 'ordem-compra', component: OrdemCompraComponent}
 ]
