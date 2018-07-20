@@ -192,6 +192,34 @@
       "complemento": " atras da RALC",
       "formaDePagamento": "dinheiro",
       "id": 1
+    },
+    {
+      "endereco": " rua d 11",
+      "numero": "101",
+      "complemento": "perto da seduc",
+      "formaDePagamento": "debito",
+      "id": 2
+    },
+    {
+      "endereco": " Rua nhamunda",
+      "numero": "000",
+      "complemento": "",
+      "formaDePagamento": "debito",
+      "id": 3
+    },
+    {
+      "endereco": " Rua Codajas",
+      "numero": "000",
+      "complemento": "",
+      "formaDePagamento": "dinheiro",
+      "id": 4
+    },
+    {
+      "endereco": " Rua cavalo manco",
+      "numero": "483",
+      "complemento": "",
+      "formaDePagamento": "debito",
+      "id": 5
     }
   ]
 }
