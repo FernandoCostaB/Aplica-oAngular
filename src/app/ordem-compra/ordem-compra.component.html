@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="ordem-compra" *ngIf="idPedidoCompra=== undefined">
-    <form novalidate>
+  <div class="ordem-compra">
+    <form novalidate #formulario="ngForm" (ngSubmit)="confirmarCompra()">
     
       <h5>Sua Compra</h5>
       <hr />
@@ -62,6 +62,7 @@
       </div>
       <br />
 
+      {{formulario.value | json}}
 
       <h5>Dados de entrega</h5>
       <hr />
@@ -69,21 +70,42 @@
       <div class="form-row">
 
         <div class="form-group col-md-6">
-          <input type="text" class="form-control {{enderecoEstadoPrimitivo ? '' : (enderecoValido ? 'is-valid' : 'is-invalid') }}" placeholder="Endereço" autocomplete="off" minlength="5" required  
-          [value]="endereco"  #inputEndereco  (input)="atualizaEndereco(inputEndereco.value)" >
-          <div class="invalid-feedback">Endereço inválido</div>
+          <input 
+            type="text" 
+            class="form-control is-invalid" 
+            placeholder="Endereço" 
+            autocomplete="off" 
+            minlength="5" 
+            required
+            name="endereco"
+            ngModel 
+          >
+          <small class="form-text text-danger">Endereço inválido</small>
         </div>
 
         <div class="form-group col-md-2">
-          <input type="text" class="form-control {{numeroEstadoPrimitivo ? '' : (numeroValido ? 'is-valid' : 'is-invalid')}}" placeholder="Número" autocomplete="off" minlength="1" 
-              required [value] = "numero" #inputNumero (input)="atualizaNumero(inputNumero.value)">
-          <br />
-          <small class="form-text text-muted">Ok</small>
+          <input 
+            type="text" 
+            class="form-control is-valid" 
+            placeholder="Número" 
+            autocomplete="off" 
+            minlength="1"
+            required
+            name="numero"
+            ngModel
+          >
+          <small class="form-text text-success">Ok</small>
         </div>
 
         <div class="form-group col-md-4">
-          <input type="text" class="form-control {{ complementoEstadoPrimitivo ? '' : (complementoValido ? 'is-valid' : '')}}" placeholder="Complemento" autocomplete="off" 
-          [value] = "complemento" #inputComplemento (input) = "atualizaComplemento(inputComplemento.value)">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Complemento" 
+            autocomplete="off"
+            name="complemento"
+            ngModel
+          >
         </div>
 
       </div>
@@ -95,21 +117,24 @@
       <div class="form-row">
           
         <div class="form-group col-md-3">
-          <select class="form-control {{ formaPagamentoEstadoPrimitivo? '' : formaDePagamentoValido ? 'is-valid' : 'is-invalid'}}" #selectFormeDePagamento (change)="atualizaFormaDePagamento(selectFormeDePagamento.value)">
-            <option>Selecione uma opção</option>
-            <option value = "dinheiro" selected="{{formaDePagamento == 'dinheiro' ? 'selected' : ''}}">Dinheiro</option>
-            <option value = "debito"  selected="{{formaDePagamento == 'debito' ? 'selected' : ''}}">Débito</option>
+          <select 
+            class="form-control is-invalid"
+            name="formaDePagamento"
+            ngModel
+          >
+            <option value="">Selecione uma opção</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="debito">Débito</option>
           </select>
-
-          <div class="invalid-feedback">Selecione uma forma de pagamento</div>
+          <small class="form-text text-danger">Forma de pagamento inválida</small>
         </div>
       </div>
 
       <hr />
-      <button type="button" class="btn btn-primary btn-lg" [disabled]= "formEstado" (click)="confirmarCompra()" >Cofirmar compra</button>
+      <button 
+        type="submit"
+        class="btn btn-primary btn-lg"
+      >Cofirmar compra</button>
     </form>
-  </div>
-  <div class="ordem-compra" *ngIf="idPedidoCompra !== undefined">
-        <app-ordem-compra-sucesso [idPedidoCompra] =idPedidoCompra ></app-ordem-compra-sucesso>
   </div>
 </div>
