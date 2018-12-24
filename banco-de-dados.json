@@ -220,6 +220,18 @@
       "complemento": "",
       "formaDePagamento": "debito",
       "id": 5
+    },
+    {
+      "endereco": "rua João Lucas",
+      "numero": "17",
+      "complemento": "Riacho Doce",
+      "id": 6
+    },
+    {
+      "endereco": "rua Barcelo",
+      "numero": "10",
+      "complemento": "Bairro Espanha",
+      "id": 7
     }
   ]
 }
