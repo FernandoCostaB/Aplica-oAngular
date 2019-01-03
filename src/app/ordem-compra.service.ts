@@ -15,12 +15,9 @@ export class OrdemCompraService {
 
        headers.append('Content-type', 'application/json');
 
-        return this.http.post(
-                `${URL_API}/pedidos`,
-                JSON.stringify(pedido),
-                new RequestOptions({headers: headers})
-        )
-        .map((resposta: Response) => resposta.json().id);
+        return this.http.post(`${URL_API}/pedidos`, JSON.stringify(pedido), new RequestOptions({headers: headers})).map(
+            (resposta: Response) => resposta.json().id
+        );
         // console.log(pedido)
     }
 }

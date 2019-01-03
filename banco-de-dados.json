@@ -232,6 +232,13 @@
       "numero": "10",
       "complemento": "Bairro Espanha",
       "id": 7
+    },
+    {
+      "endereco": "Rua Jose Doido",
+      "numero": "666",
+      "complemento": "atras do bar do Ze",
+      "formaDePagamento": "dinheiro",
+      "id": 8
     }
   ]
 }
