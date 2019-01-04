@@ -5,6 +5,7 @@ import { OfertasService} from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model'
 import "rxjs/add/observable/interval";
 import "rxjs/add/operator/map";
+import {CarrinhoService} from '../carrinho.service';
 
 @Component({
   selector: 'app-oferta',
@@ -19,13 +20,13 @@ export class OfertaComponent implements OnInit, OnDestroy {
   private ofertasService: OfertasService
 
 
-  constructor(route: ActivatedRoute, ofertasService: OfertasService  ) {
+  constructor(route: ActivatedRoute, ofertasService: OfertasService, private carrinhoService: CarrinhoService) {
     this.route = route
     this.ofertasService = ofertasService
    }
 
   ngOnInit() {
-
+    
     this.route.params.subscribe((parametros: Params) =>{
       this.ofertasService.getOfertasPorId( parametros.id) 
       .then((oferta: Oferta)=>{
@@ -33,18 +34,6 @@ export class OfertaComponent implements OnInit, OnDestroy {
       } )
      
     })
-
-  //  this.ofertasService.getOfertasPorId(this.route.snapshot.params['id']) 
-  //   .then((oferta: Oferta)=>{
-  //    this.oferta = oferta
-  //   } )
- 
-  //   this.route.params.subscribe(
-  //     (parametro: any)=>{console.log(parametro)},
-  //     (erro: any) => console.log(erro),
-  //     () => console.log('processamento foi classificado como concluido!')
-  //   )
-  
   
   }
   
@@ -52,5 +41,8 @@ export class OfertaComponent implements OnInit, OnDestroy {
    
   }
 
-
+  adicionarItemCarrinho(oferta: Oferta){
+    this.carrinhoService.incluirItem(oferta);
+    // console.log(this.carrinhoService.exibirItens());
+  }
 }
