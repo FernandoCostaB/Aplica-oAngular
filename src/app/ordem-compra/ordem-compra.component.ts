@@ -47,4 +47,16 @@ export class OrdemCompraComponent implements OnInit {
     }
 
   }
+
+  valorFinal(): number{
+    return this.carrinhoService.totalCarrinhoCompras();
+  }
+
+  public adicionar(item: ItemCarrinho): void {
+    this.carrinhoService.adicionarQuantidade(item);
+  }
+
+  public subtrair(item: ItemCarrinho): void{
+    this.carrinhoService.subtrairQuantidade(item);
+  }
 }
