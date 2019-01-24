@@ -63,5 +63,8 @@ export class CarrinhoService {
         this.totalCarrinhoCompras();
     }
 
+    public limparCarrinho(): void{
+        this.itens = [];
+    }
 }
 
