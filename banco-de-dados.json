@@ -239,6 +239,42 @@
       "complemento": "atras do bar do Ze",
       "formaDePagamento": "dinheiro",
       "id": 8
+    },
+    {
+      "endereco": "rua aleixo",
+      "numero": "898",
+      "complemento": "gege",
+      "formaDePagamento": "debito",
+      "id": 9
+    },
+    {
+      "endereco": "rua x",
+      "numero": "898",
+      "complemento": null,
+      "formaDePagamento": "dinheiro",
+      "itens": [
+        {
+          "id": 2,
+          "img": {
+            "url": "/assets/ofertas/2/img1.jpg"
+          },
+          "titulo": "Cozinha Mexicana",
+          "descricao_oferta": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
+          "valor": 32.9,
+          "quantidade": 1
+        },
+        {
+          "id": 6,
+          "img": {
+            "url": "/assets/ofertas/6/img1.jpg"
+          },
+          "titulo": "Academia de tiro",
+          "descricao_oferta": "Sessão de tiro dinâmico com Instrutor, Estande, Alvo e Equipamentos.",
+          "valor": 89.9,
+          "quantidade": 2
+        }
+      ],
+      "id": 10
     }
   ]
 }
